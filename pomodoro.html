@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 offset-md-3 text-center">
+        <h1 class="my-5">Pomodoro Timer</h1>
+        <div class="timer d-flex justify-content-center align-items-center my-5">
+          <div class="minutes">25</div>
+          <div>:</div>
+          <div class="seconds">00</div>
+        </div>
+        <div class="buttons d-flex justify-content-center">
+          <button class="btn btn-primary mr-3" id="start-btn">Start</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+        <div class="dark-mode-toggle mt-5">
+          <button class="btn btn-outline-primary" id="dark-mode-btn">Dark Mode</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="pomodoro.js"></script>
+</body>
+
+</html>
