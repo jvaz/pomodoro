@@ -18,3 +18,13 @@
   background-color: #000;
   color: #fff;
 }
+
+.title-container {
+  display: flex;
+  align-items: center;
+}
+
+.pomodoro-icon {
+  height: 2rem;
+  margin: 2rem;
+}
