@@ -41,3 +41,9 @@
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
 }
+
+.progress-bar {
+  height: 10px;
+  background-color: #ccc;
+  margin-bottom: 10px;
+}

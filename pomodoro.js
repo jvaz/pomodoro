@@ -13,8 +13,14 @@ $(document).ready(function () {
     { duration: 15, type: "Long Break" },
   ];
 
+  let progressBar = document.getElementById("progress-bar");
+
   function startTimer(duration, display) {
     let timer = duration || timeLeft, minutes, seconds;
+    //let progressBar = document.getElementById("progress-bar");
+    //let progress = 0;
+    //let progressStep = (100 / (duration * 60)) * 1000;
+
     interval = setInterval(function () {
       minutes = parseInt(timer / 60, 10);
       seconds = parseInt(timer % 60, 10);
@@ -38,8 +44,17 @@ $(document).ready(function () {
         startTimer(nextCycle.duration * 60, display);
       } else {
         timeLeft = timer; // update timeLeft variable
+        //progress += progressStep;
+        //progressBar.value = progress;
+        updateBar();
       }
     }, 1000);
+  }
+
+  function updateBar() {
+    let progress = ((currentCycle - 1) / (cycles.length - 1)) * 100;
+    //progressBar.value = progress
+    $(".progress-bar").css("width", progress + "%");
   }
 
   $("#start-btn").click(function () {
@@ -71,9 +86,12 @@ $(document).ready(function () {
     currentCycle = 1;
     timeLeft = 0; // reset timeLeft variable
     $("#start-btn").removeClass("btn-danger").addClass("btn-primary").text("Start"); // reset start button
+    document.getElementById("progress-bar").value = 0; // reset progress bar
+    updateBar();
   });
 
   $("#dark-mode-btn").click(function () {
     $("body").toggleClass("dark-mode");
+    $(this).toggleClass("btn-outline-warning btn-warning");
   });
 });
